@@ -1,0 +1,35 @@
+<div *ngIf="!sso.hasValidAccessToken()">
+  <div class="row ">
+
+    <div class="wrapper ">
+        <div id="formContent">
+          <div class=" first">
+          <img src="assets/images/hqsft-logo.png" alt="Hcd" />
+            <p>HQ Software Consulting</p>
+          </div>
+
+          <button  type="submit" (click)="sso.initImplicitFlow()" class=" fourth k-button  k-primary ng-star-inserted"><i class="fa fa-sign-out" aria-hidden="true"></i> Login</button>
+          <div id="formFooter">
+            <a class="underlineHover" >Login to your account.</a>
+          </div>
+
+        </div>
+      </div>
+    </div>
+</div>
+<div *ngIf="sso.hasValidAccessToken();">
+<div class="">Welocome CSAC Application</div>
+<a (click)="logOut()" class="" tabindex="-1">Click</a>
+</div>
+
+
+<div *ngIf="ShowHide; else elseBlock">
+  
+
+</div>
+<ng-template #elseBlock>
+    <div class="loader-wrapper">
+        <div class="loader"></div>
+
+    </div>
+</ng-template>

@@ -1,0 +1,97 @@
+<div class="container prviewcss">
+    <div *ngIf="ShowHide; else elseBlock"></div>
+    <ng-template #elseBlock>
+        <div class="loader-wrapper">
+            <div class="loader"></div>
+    
+        </div>
+    </ng-template>
+    <div class="position-relative row form-group">
+        <div class="col-lg-11 col-sm-81">
+          <h4><i class="fa fa-list" aria-hidden="true"></i> Update Post</h4>
+       
+        </div>
+        <div class="col-lg-1 col-sm-4">
+            <a href="#" routerLink="/post/index" class="k-button k-primary">Back</a>
+  
+        </div>
+  
+      </div>
+
+      <div class="frm">     
+    <form [formGroup]="form" (ngSubmit)="submit()">
+        <h4 class="h4form-title">  UPDATE YOUR POST</h4>
+        <div class="form-group">
+            <label for="title">Title</label>
+            <input 
+                formControlName="title"
+                id="title" 
+                type="text" 
+                [ngModel]="post.title"
+                class="form-control">
+            <div *ngIf="f['title'].touched && f['title'].invalid" class="alert alert-danger">
+                <div *ngIf="f['title'].errors && f['title'].errors['required']">Title is required.</div>
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="title">Project</label>
+            <input 
+                formControlName="project"
+                id="project" 
+                type="text" 
+                [ngModel]="post.project"
+                class="form-control">
+            <div *ngIf="f['project'].touched && f['project'].invalid" class="alert alert-danger">
+                <div *ngIf="f['project'].errors && f['project'].errors['required']">Project is required.</div>
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="title">Organisation Name</label>
+            <input 
+                formControlName="organisation"
+                id="organisation" 
+                type="text" 
+                [ngModel]="post.organisation"
+                class="form-control">
+            <div *ngIf="f['organisation'].touched && f['organisation'].invalid" class="alert alert-danger">
+                <div *ngIf="f['organisation'].errors && f['organisation'].errors['required']">Organisation is required.</div>
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="title">Email</label>
+            <input 
+                formControlName="email"
+                id="email" 
+                type="text" 
+                [ngModel]="post.email"
+                class="form-control">
+            <div *ngIf="f['email'].touched && f['email'].invalid" class="alert alert-danger">
+                <div *ngIf="f['email'].errors && f['email'].errors['required']">Email is required.</div>
+            </div>
+        </div>
+           
+        <div class="form-group">
+            <label for="body">Project Description</label>
+            <textarea 
+                formControlName="body"
+                id="body" 
+                type="text"                 
+                [(ngModel)]="post.body"
+                class="form-control">
+            </textarea>
+            <div *ngIf="f['body'].touched && f['body'].invalid" class="alert alert-danger">
+                <div *ngIf="f['body'].errors && f['body'].errors['required']">Body is required.</div>
+            </div>
+        </div>
+    
+        <span class="k-form-separator"></span>
+        <div class="form-group checkboxesc">
+            
+            <input   [(ngModel)]="isPublish" type="checkbox" formControlName="published" />
+            <span>Status</span>
+        </div>
+       
+        <button class="k-button k-primary btncss" type="submit" [disabled]="!form.valid">Update</button>
+    </form>
+</div>
+</div>
