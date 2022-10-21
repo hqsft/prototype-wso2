@@ -25,7 +25,7 @@ export const environment = {
     //clientId:  "l9f92ABqHuKsbWuQfIVBIsrXKssa",
     clientId:  "OA71ZVEaAHq9cohn5sbsn2qrq_Aa",
     issuer:  "https://csacapi.hsoftcloud.com:9443/oauth2/token", 
-    redirectUri: "http://localhost:4200/csac/login",    
+    redirectUri: "https://csacangular.hsoftcloud.com/csac/login",    
     loginUrl:  "https://csacapi.hsoftcloud.com:9443/oauth2/authorize",    
     tokenEndpoint: "https://csacapi.hsoftcloud.com:9443/oauth2/token",
     userinfoEndpoint:  "https://csacapi.hsoftcloud.com:9443/oauth2/userinfo",
